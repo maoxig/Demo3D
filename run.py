@@ -29,17 +29,21 @@ def main():
     else:
         raise NotImplementedError
 
-    #print(text)
+    # print(text)
     if args.mode == "web":
         print("Running in web mode.")
         import uvicorn
         import os
         import sys
+
         # 将 model 包所在的路径添加到 Python 模块搜索路径中
-        sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "model")))
-        uvicorn.run("web.backend.main:app",host="0.0.0.0",reload=True)
+        sys.path.append(
+            os.path.abspath(os.path.join(os.path.dirname(__file__), "text_to_3d"))
+        )
+        uvicorn.run("web.backend.main:app", host="0.0.0.0", reload=True)
     else:
         print("Running in cmd mode.")
 
-if __name__=="__main__":
+
+if __name__ == "__main__":
     main()
