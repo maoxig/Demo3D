@@ -4,7 +4,7 @@ from text_to_3d import generate_3d_model, preprocess_input
 
 from fastapi import APIRouter, Response
 from fastapi.responses import JSONResponse, FileResponse
-from models import TextTo3dRequest
+from web.backend.models import TextTo3dRequest
 
 model_router = APIRouter()
 
