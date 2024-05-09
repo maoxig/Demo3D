@@ -1,4 +1,3 @@
-from PIL import Image, ImageDraw, ImageFont
 from pydantic import BaseModel
 from typing import List
 
