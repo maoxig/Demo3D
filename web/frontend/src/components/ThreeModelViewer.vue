@@ -12,7 +12,7 @@ export default defineComponent({
     props: {
         modelUrl: {
             type: String,
-            default: ''
+            required: true
         }
     },
     setup(props) {
@@ -22,10 +22,9 @@ export default defineComponent({
         onMounted(() => {
             const container = containerRef.value;
             viewer = new api.ThreeModelViewer(container);
-            if (props.modelUrl) {
-                // 加载背景物体
-                viewer.loadModel(props.modelUrl);
-            }
+            console.log(props.modelUrl)
+            viewer.loadModel(props.modelUrl);
+
         });
 
         onBeforeUnmount(() => {
@@ -38,14 +37,10 @@ export default defineComponent({
         watch(() => props.modelUrl, (newModelUrl) => {
             if (viewer) {
                 if (newModelUrl) {
-                    // 清除旧的物体
-                    viewer.clearModel();
-
                     // 加载新的背景物体
                     viewer.loadModel(newModelUrl);
                 } else {
-                    // 清除背景物体
-                    viewer.clearModel();
+
                 }
             }
         });

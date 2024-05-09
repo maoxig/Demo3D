@@ -2,9 +2,13 @@
     <div>
         <textarea type="text" v-model="inputString"></textarea>
         <button @click="generateModelUrl">Generate 3D Model</button>
-        <div class="model-viewer-container">
+        <a v-if="modelUrl" :href="modelUrl" download="model.glb">
+            <button>Download Model</button>
+        </a>
+        <div class="model-viewer-container" v-if="modelUrl">
             <ThreeModelViewerComponent :model-url="modelUrl" />
         </div>
+
     </div>
 </template>
 
@@ -31,12 +35,5 @@ async function generate3DModel(input: string) {
 textarea {
     width: 300px;
     height: 100px;
-}
-
-.model-viewer-container {
-    width: 800px;
-    /* 设置组件的宽度 */
-    height: 600px;
-    /* 设置组件的高度 */
 }
 </style>
