@@ -44,6 +44,23 @@ class GenerationParams(BaseModel):
     is_textured: bool = True  # 是否有纹理
 
 
+class TrainParams(BaseModel):
+    """描述模型训练条件
+
+    Args:
+
+    """
+
+    seed: int = 0
+    step: int = 200
+    type: str
+    checkpoint_path: str = "result/"
+
+
+class Setting(BaseModel):
+    checkpoint_path: str = "result/"
+
+
 def preprocess_input(input: str) -> str:
     """处理一些字符串，转换为适合的prompt"""
     return input
