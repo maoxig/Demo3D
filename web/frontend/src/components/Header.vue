@@ -1,24 +1,25 @@
 <template>
     <el-header class="custom-header">
         <div class="header-right">
+            <el-switch v-model="isDark" inline-prompt: active-color="var(--el-fill-color-dark)"
+                inactive-color="var(--el-color-primary)" @change=toggleDark></el-switch>
             <a class="github-link" href="https://github.com/maoxig/Demo3D" target="_blank">
-                <img src="/public/github-mark.svg" alt="GitHub Icon" class="github-icon">
+                <img src="/github-mark.svg" alt="GitHub Icon" class="github-icon">
             </a>
-            <el-switch v-model="isNightMode" active-color="#409eff" inactive-color="#ffffff"
-                @change="toggleNightMode"></el-switch>
         </div>
     </el-header>
 </template>
 
-
 <script setup lang="ts">
 import { ref } from 'vue';
+import { useDark, useToggle } from '@vueuse/core'
 
-const isNightMode = ref(false);
+const isDark = useDark();
+const toggleDark = useToggle(isDark);
 
-function toggleNightMode(value: boolean) {
-    // Handle switching night mode here
-}
+// Handle switching night mode here
+// You can add your logic here to change the night mode
+
 </script>
 
 <style scoped>
@@ -27,7 +28,7 @@ function toggleNightMode(value: boolean) {
     justify-content: right;
     align-items: right;
     padding: 0 20px;
-    background-color: #545c64;
+    /* background-color: #545c64; */
 }
 
 .header-right {
@@ -42,6 +43,5 @@ function toggleNightMode(value: boolean) {
 .github-icon {
     width: 20px;
     height: 20px;
-
 }
 </style>

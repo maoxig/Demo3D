@@ -1,6 +1,6 @@
 <template>
-    <div class="slider-demo-block">
-        <div class="slider-item-label">{{ label }}</div>
+    <div class="setting-item">
+        <div class="settting-item-label">{{ label }}</div>
         <el-slider v-model="value" show-input />
     </div>
 </template>
@@ -31,18 +31,17 @@ export default defineComponent({
 </script>
 
 <style scoped>
-.slider-demo-block {
-    max-width: 600px;
+.setting-item {
     display: flex;
     align-items: center;
 }
 
-.slider-demo-block .slider-item-label {
+.setting-item .settting-item-label {
     margin-right: 12px;
-    color: white;
+    color:var(--el-menu-text-color)
 }
 
-.slider-demo-block .el-slider {
+.setting-item .el-slider {
     margin-top: 0;
 }
 </style>

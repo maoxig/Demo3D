@@ -7,12 +7,9 @@
       <el-container direction="vertical">
         <Header></Header>
         <el-container class="main">
-          <el-container>
-            <el-main>
-              <RouterView />
-            </el-main>
-          </el-container>
-          <SliderGroup />
+          <el-main>
+            <RouterView />
+          </el-main>
         </el-container>
       </el-container>
     </el-container>
@@ -29,6 +26,7 @@ import Header from '@/components/Header.vue';
 <style scoped>
 .app {
   height: 100%;
+  padding: 0%;
 }
 
 .el-aside :left {
@@ -38,5 +36,9 @@ import Header from '@/components/Header.vue';
 .main-container {
 
   height: 100%
+}
+
+.el-main {
+  padding: 0;
 }
 </style>

@@ -1,6 +1,5 @@
 <template>
-    <el-menu class="menu-aside" background-color="#545c64" text-color="#fff" :collapse-transition="false"
-        active-text-color="#ffd04b" @select="handleMenuSelect">
+    <el-menu class="menu-aside"  :collapse-transition="false" @select="handleMenuSelect">
         <h3>菜单</h3>
         <el-menu-item :index="item.path + ''" v-for="item in list" :key="item.label">
             <component class="icons" :is="item.icon"></component>
@@ -40,7 +39,6 @@ const list = [
 }
 
 .menu-aside h3 {
-    color: #fff;
     text-align: center;
 }
 </style>

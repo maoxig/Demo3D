@@ -1,28 +1,33 @@
 <template>
     <el-container class="container">
         <el-container>
-            <el-row class="model-viewer-row">
-                <el-col :span="16">
-                    <div class="model-viewer-container" v-if="modelUrl">
-                        <ThreeModelViewerComponent :model-url="modelUrl" />
-                    </div>
-                </el-col>
-            </el-row>
+            <el-container>
+                <el-row class="model-viewer-row">
+                    <el-col :span="16">
+                        <div class="model-viewer-container" v-if="modelUrl">
+                            <ThreeModelViewerComponent :model-url="modelUrl" />
+                        </div>
+                    </el-col>
+                </el-row>
+            </el-container>
+            <el-footer class="footer">
+                <el-input type="textarea" v-model="inputString" :rows="4"></el-input>
+                <div class="button-group">
+                    <el-button @click="generateModelUrl">Generate 3D Model</el-button>
+                    <a v-if="modelUrl" :href="modelUrl" download="model.glb">
+                        <el-button>Download Model</el-button>
+                    </a>
+                </div>
+            </el-footer>
         </el-container>
-        <el-footer class="footer">
-            <el-input type="textarea" v-model="inputString" :rows="4"></el-input>
-            <div class="button-group">
-                <el-button @click="generateModelUrl">Generate 3D Model</el-button>
-                <a v-if="modelUrl" :href="modelUrl" download="model.glb">
-                    <el-button>Download Model</el-button>
-                </a>
-            </div>
-        </el-footer>
+        <SettingPanel />
     </el-container>
+
 </template>
 
 <script setup lang="ts">
 import ThreeModelViewerComponent from '@/components/ThreeModelViewer.vue';
+import SettingPanel from '@/components/SettingPanel.vue';
 import api from '@/api';
 import { defineComponent, ref } from 'vue';
 
