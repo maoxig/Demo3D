@@ -1,9 +1,7 @@
 <template>
   <div class="app">
     <el-container class="main-container">
-      <el-aside class="left">
-        <MenuAside />
-      </el-aside>
+      <MenuAside />
       <el-container direction="vertical">
         <Header></Header>
         <el-container class="main">
