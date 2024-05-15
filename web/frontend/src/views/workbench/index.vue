@@ -11,7 +11,7 @@
                 </el-row>
             </el-container>
             <el-footer class="footer">
-                <el-input type="textarea" v-model="inputString" :rows="4"></el-input>
+                <el-input type="textarea" v-model="inputString" :rows="2" clearable></el-input>
                 <div class="button-group">
                     <el-button @click="generateModelUrl">Generate 3D Model</el-button>
                     <a v-if="modelUrl" :href="modelUrl" download="model.glb">
@@ -56,6 +56,9 @@ async function generate3DModel(input: string) {
 
 .model-viewer-container {
     margin-top: 20px;
+}
+.el-input{
+
 }
 
 .footer {

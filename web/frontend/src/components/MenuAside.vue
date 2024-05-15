@@ -25,7 +25,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import { useRoute, useRouter, RouteLocationNormalizedLoaded } from 'vue-router';
+import { useRoute, useRouter} from 'vue-router';
 
 const route = useRoute();
 const router = useRouter();
@@ -60,8 +60,9 @@ function handleMenuSelect(index: string) {
     /* 根据需要调整内边距 */
 }
 
-.el-aside {height: 100%;
-    transition: width 0.3s;
+.el-aside {
+    height: 100%;
+    transition: width 0.5s;
 }
 
 .collapsed {
