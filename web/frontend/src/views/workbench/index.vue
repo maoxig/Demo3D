@@ -57,9 +57,6 @@ async function generate3DModel(input: string) {
 .model-viewer-container {
     margin-top: 20px;
 }
-.el-input{
-
-}
 
 .footer {
     display: flex;

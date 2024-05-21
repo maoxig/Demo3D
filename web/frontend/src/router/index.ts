@@ -25,7 +25,7 @@ const router = createRouter({
       path: '/workbench',
       name: 'workbench',
       component: WorkbenchView,
-      meta: { label: '推理', icon: 'Monitor' }
+      meta: { label: '工作台', icon: 'Monitor' }
     },
     {
       path: '/settings',
