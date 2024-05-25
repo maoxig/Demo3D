@@ -12,7 +12,7 @@ export default defineConfig({
     vue(),
     AutoImport({
       resolvers: [ElementPlusResolver()],
-      dts: true
+      dts: "auto-imports.d.ts",
     }),
     Components({
       resolvers: [ElementPlusResolver()],

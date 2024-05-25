@@ -79,18 +79,18 @@ class ThreeModelViewer {
 
 
 export default {
-    async generate3DModel(text: string): Promise<Blob> {
+    async generate3DModel(payload: any): Promise<Blob> {
+        console.log(payload)
         const response = await fetch('http://localhost:8000/api/generate_3d_model', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({
-                text: text,
-                step: 200
-            })
+            body: JSON.stringify(payload)
         });
-        return await response.blob();
+        const data = await response.blob();
+
+        return data; 
     },
     ThreeModelViewer
 }

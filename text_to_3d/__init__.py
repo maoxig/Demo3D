@@ -41,6 +41,7 @@ class GenerationParams(BaseModel):
     step: int = 200  # 迭代步数
     seed: int = 0  # 随机种子
     type: str = "history"  # 类型
+    learning_rate: float = 0.01
     is_textured: bool = True  # 是否有纹理
 
 

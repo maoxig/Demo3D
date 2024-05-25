@@ -4,17 +4,17 @@
             <el-container>
                 <el-row class="model-viewer-row">
                     <el-col :span="16">
-                        <div class="model-viewer-container" v-if="modelUrl">
-                            <ThreeModelViewerComponent :model-url="modelUrl" />
+                        <div class="model-viewer-container" v-if="workbenchStore.modelUrl">
+                            <ThreeModelViewerComponent :model-url="workbenchStore.modelUrl" />
                         </div>
                     </el-col>
                 </el-row>
             </el-container>
             <el-footer class="footer">
-                <el-input type="textarea" v-model="inputString" :rows="2" clearable></el-input>
+                <el-input type="textarea" v-model="workbenchStore.text" :rows="2" clearable></el-input>
                 <div class="button-group">
-                    <el-button @click="generateModelUrl">Generate 3D Model</el-button>
-                    <a v-if="modelUrl" :href="modelUrl" download="model.glb">
+                    <el-button @click="submitRequest">Generate 3D Model</el-button>
+                    <a v-if="workbenchStore.modelUrl" :href="workbenchStore.modelUrl" download="model.glb">
                         <el-button>Download Model</el-button>
                     </a>
                 </div>
@@ -26,22 +26,18 @@
 </template>
 
 <script setup lang="ts">
+
 import ThreeModelViewerComponent from '@/components/ThreeModelViewer.vue';
 import SettingPanel from '@/components/SettingPanel.vue';
-import api from '@/api';
-import { defineComponent, ref } from 'vue';
 
-let inputString = ref('');
-let modelUrl = ref('');
+import { useWorkbenchStore } from '@/store/modules/workbench';
 
-async function generateModelUrl() {
-    // 根据用户输入的字符串生成模型的 URL
-    modelUrl.value = await generate3DModel(inputString.value);
-    console.log(modelUrl.value);
-}
 
-async function generate3DModel(input: string) {
-    return URL.createObjectURL(await api.generate3DModel(input));
+const workbenchStore = useWorkbenchStore();
+
+
+const submitRequest = async () => {
+    await workbenchStore.sendRequest()
 }
 </script>
 
