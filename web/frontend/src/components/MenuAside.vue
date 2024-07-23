@@ -42,7 +42,7 @@ function handleMenuSelect(index: string) {
 <style scoped>
 .menu-aside {
     width: 100%;
-
+    
     border-right: none;
     transition: width 0.3s;
 }
@@ -63,6 +63,8 @@ function handleMenuSelect(index: string) {
 .el-aside {
     height: 100%;
     transition: width 0.5s;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+    z-index: 9;
 }
 
 .collapsed {

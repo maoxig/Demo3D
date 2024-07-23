@@ -1,4 +1,4 @@
-<template>train
+<template>learning
 </template>
 
 <script setup lang="ts">
