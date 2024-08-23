@@ -22,7 +22,6 @@
         </el-container>
         <SettingPanel />
     </el-container>
-
 </template>
 
 <script setup lang="ts">

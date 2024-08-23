@@ -4,8 +4,8 @@
       <MenuAside />
       <el-container direction="vertical">
         <Header></Header>
-        <el-container class="main">
-          <el-main>
+        <el-container class="main" >
+          <el-main >
             <RouterView />
           </el-main>
         </el-container>
@@ -38,5 +38,6 @@ import Header from '@/components/Header.vue';
 
 .el-main {
   padding: 0;
+
 }
 </style>

@@ -70,9 +70,15 @@ a,
         /* display: grid;
     grid-template-columns: 1fr 1fr; */
         padding: 0 0;
+        
     }
 }
-
+:root{
+    --carousel-height: 150px;
+        /* 走马灯高度 */
+    --header-height: 60px;
+    /* 头部高度 */
+}
 .bordered {
     border: 1px solid var(--color-border);
     /* 使用之前定义的边框颜色变量 */

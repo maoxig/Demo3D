@@ -1,7 +1,10 @@
 <template>
     <el-aside :class="{ 'collapsed': isCollapsed }">
         <div class="menu-header">
-            <h3 class="menu-title" :class="{ 'hidden': isCollapsed }">菜单</h3>
+            <el-image style="" src="/src/assets/logo.png" fit="fit" class="logo" />
+            <h3 class="menu-title" :class="{ 'hidden': isCollapsed }">
+                模型工坊
+            </h3>
             <div class="menu-toggle" @click="isCollapsed = !isCollapsed">
                 <el-icon v-if="isCollapsed">
                     <Expand />
@@ -40,6 +43,11 @@ function handleMenuSelect(index: string) {
 </script>
 
 <style scoped>
+.logo {
+    width: 32px;
+    height: 32px;
+    margin-right: 10px;
+}
 .menu-aside {
     width: 100%;
     

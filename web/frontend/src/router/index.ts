@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
 // 引入主页视图
-import HomeView from '../views/home/HomeView.vue';
+import HomeView from '../views/home/index.vue';
 // 引入工作台视图
 import WorkbenchView from '../views/workbench/index.vue';
 // 引入配置视图

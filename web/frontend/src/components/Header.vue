@@ -74,7 +74,7 @@ function toggleFullscreen() {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 60px;
+    height: var(--el-header-height);
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
     z-index: 1;
     position: relative;
