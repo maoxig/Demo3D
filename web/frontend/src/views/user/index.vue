@@ -40,7 +40,7 @@
 }
 
 .user-scrollbar {
-    height: calc(100vh - var(--header-height));
+    height: calc(100vh - var(--header-height) - var(--main-padding) * 2);
     padding: 20px;
 }
 

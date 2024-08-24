@@ -20,6 +20,8 @@ declare module 'vue' {
     ElDropdownItem: typeof import('element-plus/es')['ElDropdownItem']
     ElDropdownMenu: typeof import('element-plus/es')['ElDropdownMenu']
     ElFooter: typeof import('element-plus/es')['ElFooter']
+    ElForm: typeof import('element-plus/es')['ElForm']
+    ElFormItem: typeof import('element-plus/es')['ElFormItem']
     ElHeader: typeof import('element-plus/es')['ElHeader']
     ElIcon: typeof import('element-plus/es')['ElIcon']
     ElImage: typeof import('element-plus/es')['ElImage']
@@ -54,6 +56,9 @@ declare module 'vue' {
     Menuitem: typeof import('./src/components/Menuitem.vue')['default']
     MenuItem: typeof import('./src/components/MenuItem.vue')['default']
     MenuItems: typeof import('./src/components/MenuItems.vue')['default']
+    ModelCard: typeof import('./src/components/ModelCard.vue')['default']
+    ModelRecommendCard: typeof import('./src/components/ModelRecommendCard.vue')['default']
+    ModelRecommendSection: typeof import('./src/components/ModelRecommendSection.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     SettingItem: typeof import('./src/components/SettingItem.vue')['default']
@@ -64,6 +69,8 @@ declare module 'vue' {
     TheWelcome: typeof import('./src/components/TheWelcome.vue')['default']
     ThreeModelViewer: typeof import('./src/components/ThreeModelViewer.vue')['default']
     Topbar: typeof import('./src/components/Topbar.vue')['default']
+    VideoCard: typeof import('./src/components/VideoCard.vue')['default']
+    VideoRecommendationCard: typeof import('./src/components/VideoRecommendationCard.vue')['default']
     WelcomeItem: typeof import('./src/components/WelcomeItem.vue')['default']
   }
   export interface ComponentCustomProperties {

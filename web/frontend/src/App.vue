@@ -37,7 +37,7 @@ import Header from '@/components/Header.vue';
 }
 
 .el-main {
-  padding: 0;
+  padding: var(--main-padding);
 
 }
 </style>

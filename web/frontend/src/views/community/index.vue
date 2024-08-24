@@ -42,12 +42,12 @@ const load = () => {
 }
 
 .community-view {
-  height: calc(100vh - var(--header-height));
+  height: calc(100vh - var(--header-height) - var(--main-padding) * 2);
   /* 60px is the height of the header */
 }
 
 .infinite-list {
-  height: calc(100% - var(--carousel-height));
+  height: calc(100% - var(--carousel-height) );
   /* 100px is the height of the carousel */
   padding: 0;
   margin: 0;

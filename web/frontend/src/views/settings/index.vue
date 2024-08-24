@@ -20,18 +20,36 @@
             <el-card>
                 <template #header>
                     <div class="card-header">
-                        <span>3D建模设置</span>
+                        <span>首页设置设置</span>
                     </div>
                 </template>
-                AI助手设置AI助手设置AI助手设置AI助手设置AI助手设置AI助手设置AI助手设置AI助手设置AI助手设置AI助手设置AI助手设置AI助手设置AI助手设置AI助手设置AI助手设置AI助手设置AI助手设置AI助手设置AI助手设置AI助手设置AI助手设置AI助手设置AI助手设置AI助手设置AI助手设置AI助手设置AI助手设置AI助手设置AI助手设置AI助手设置AI助手设置AI助手设置AI助手设置AI助手设置AI助手设置AI助手设置AI助手设置AI助手设置AI助手设置AI助手设置AI助手设置AI助手设置AI助手设置AI助手设置AI助手设置AI助手设置AI助手设置AI助手设置AI助手设置
+
+                <el-form label-position="right" label-width="100px">
+                    <el-form-item label="视频卡片数量">
+                        <el-slider v-model="videoCardLimit" :min="1" :max="10" :show-stops="true"
+                            @change="handleVideoCardLimitChange" />
+                    </el-form-item>
+                </el-form>
             </el-card>
         </el-scrollbar>
     </main>
 </template>
+<script setup lang="ts">
+import { ref } from 'vue';
+import { useSettingStore } from '@/store/modules/setting';
+const settingStore = useSettingStore();
+
+const videoCardLimit = ref(settingStore.getVideoCardLimit());
+
+const handleVideoCardLimitChange = (limit: number) => {
+    videoCardLimit.value = limit;
+    settingStore.setVideoCardLimit(limit);
+};
+</script>
 <style lang="css" scoped>
 .setting-scrollbar {
-    height: calc(100vh - var(--header-height));
-    padding: 20px;
+    height: calc(100vh - var(--header-height) - var(--main-padding) * 2);
+
 }
 
 .card-header {
